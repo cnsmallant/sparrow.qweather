@@ -21,6 +21,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Icon.png">
+      <PackagePath>\</PackagePath>
+      <Pack>True</Pack>
+    </None>
     <None Update="Images\Icon.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
