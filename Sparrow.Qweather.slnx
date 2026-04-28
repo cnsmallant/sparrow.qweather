@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Sparrow.Qweather.Example/Sparrow.Qweather.Example.csproj" />
+  <Project Path="Sparrow.Qweather/Sparrow.Qweather.csproj" />
+</Solution>
