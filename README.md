@@ -1,6 +1,6 @@
 # Sparrow.Qweather .NET SDK
 
-[![GitHub stars](https://img.shields.io/github/stars/cnsmallant/sparrow.qweather?style=flat&logo=github)](https://github.com/cnsmallant/sparrow.qweather/stargazers)[![star](https://gitee.com/dikeko/sparrow.qweather/badge/star.svg?theme=dark)](https://gitee.com/dikeko/sparrow.qweather/stargazers)[![NuGet Version](https://img.shields.io/nuget/vpre/sparrow.qweather?style=flatt&logo=nuget)](https://www.nuget.org/packages/Sparrow.Qweather)![GitHub License](https://img.shields.io/github/license/cnsmallant/sparrow.qweather?logo=github)![NuGet Downloads](https://img.shields.io/nuget/dt/sparrow.qweather?logo=nuget)
+[![GitHub stars](https://img.shields.io/github/stars/cnsmallant/sparrow.qweather?style=flat&logo=github)](https://github.com/cnsmallant/sparrow.qweather/stargazers)  [![star](https://gitee.com/dikeko/sparrow.qweather/badge/star.svg?theme=gray)](https://gitee.com/dikeko/sparrow.qweather/stargazers)  [![NuGet Version](https://img.shields.io/nuget/vpre/sparrow.qweather?style=flatt&logo=nuget)](https://www.nuget.org/packages/Sparrow.Qweather)  ![GitHub License](https://img.shields.io/github/license/cnsmallant/sparrow.qweather?logo=github)  ![NuGet Downloads](https://img.shields.io/nuget/dt/sparrow.qweather?logo=nuget)
 
 
 ---
