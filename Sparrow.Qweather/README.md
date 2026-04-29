@@ -1,6 +1,21 @@
 # Sparrow.Qweather .NET SDK
 
 ---
+## 简介
+Sparrow.Qweather 是基于和风天气开放平台官方 API 封装的 .NET SDK，提供简洁、类型安全的异步调用接口，让开发者无需关心 JWT 签名与 HTTP 细节，即可在 .NET 项目中快速接入全球气象数据服务。
+
+### 项目地址
+- GitHub：https://github.com/cnsmallant/sparrow.qweather
+- Gitee：https://gitee.com/dikeko/sparrow.qweather
+
+### 特性
+- 全覆盖：封装和风天气 12 大类、27 个接口，包括天气预报、空气质量、台风、海洋、天文、历史数据等
+
+- 开箱即用：统一的 WebApiClient 扩展方法，一行代码发起请求
+- 安全鉴权：内置 Ed25519 私钥 + JWT 签名，无需手动处理认证逻辑
+- 异步优先：全部接口采用 async/await 模式，天然适配现代 .NET 应用
+- 类型安全：每个接口均有对应的强类型 Request / Response 类，IDE 自动补全友好
+- 多语言文档：提供中文、English、Français、Español、Русский、العربية、日本語、한국어 八种语言文档
 
 ## 语言 / Languages
 
