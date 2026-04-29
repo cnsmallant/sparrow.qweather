@@ -1,5 +1,10 @@
 # Sparrow.Qweather .NET SDK
 
+<a href='https://github.com/cnsmallant/sparrow.qweather/stargazers'> <img src='https://img.shields.io/github/stars/cnsmallant/sparrow.qweather?style=flat&logo=github'></img></a><a href='https://gitee.com/dikeko/sparrow.qweather/stargazers'><img src='https://gitee.com/dikeko/sparrow.qweather/badge/star.svg?theme=dark' alt='star'></img></a><a href='https://www.nuget.org/packages/Sparrow.Qweather'>
+<img alt="NuGet Version" src='https://img.shields.io/nuget/vpre/sparrow.qweather?style=flatt&logo=nuget'></img>
+ </a><img alt="GitHub License" src='https://img.shields.io/github/license/cnsmallant/sparrow.qweather?logo=github'></img><img alt='NuGet Downloads' src='https://img.shields.io/nuget/dt/sparrow.qweather?logo=nuget'></img>
+
+
 ---
 ## 简介
 Sparrow.Qweather 是基于和风天气开放平台官方 API 封装的 .NET SDK，提供简洁、类型安全的异步调用接口，让开发者无需关心 JWT 签名与 HTTP 细节，即可在 .NET 项目中快速接入全球气象数据服务。
