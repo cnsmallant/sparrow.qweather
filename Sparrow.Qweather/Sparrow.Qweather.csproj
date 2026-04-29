@@ -2,17 +2,20 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>2026.04.28.01</Version>
+    <Version>2026.04.29</Version>
     <Authors>Tiiko</Authors>
-    <Description>和风天气.NET SDK </Description>
+    <Description>Sparrow.Qweather 是基于和风天气开放平台官方 API 封装的 .NET SDK，提供简洁、类型安全的异步调用接口，让开发者无需关心 JWT 签名与 HTTP 细节，即可在 .NET 项目中快速接入全球气象数据服务。</Description>
     <Copyright>©迪易科®</Copyright>
-    <PackageProjectUrl>https://gitee.com/dikeko/sparrow.qweather</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/cnsmallant/sparrow.qweather</PackageProjectUrl>
     <PackageIcon>Icon.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://gitee.com/dikeko/sparrow.qweather</RepositoryUrl>
+	  <RepositoryUrl>https://github.com/cnsmallant/sparrow.qweather</RepositoryUrl>
     <PackageTags>Sparrow.Qweather,Qweather,Sparrow,和风天气,和风天气工具包,和风天气SDK</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <Title>$(AssemblyName)</Title>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
   <ItemGroup>
