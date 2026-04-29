@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>2026.04.29.01</Version>
+    <Version>2026.04.29.02</Version>
     <Authors>Tiiko</Authors>
     <Description>Sparrow.Qweather 是基于和风天气开放平台官方 API 封装的 .NET SDK，提供简洁、类型安全的异步调用接口，让开发者无需关心 JWT 签名与 HTTP 细节，即可在 .NET 项目中快速接入全球气象数据服务。</Description>
     <Copyright>©迪易科®</Copyright>
