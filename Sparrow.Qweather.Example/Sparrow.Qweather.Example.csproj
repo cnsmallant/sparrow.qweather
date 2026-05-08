@@ -11,4 +11,13 @@
     <ProjectReference Include="..\Sparrow.Qweather\Sparrow.Qweather.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="cert\ed25519-private.pem">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="cert\ed25519-public.pem">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

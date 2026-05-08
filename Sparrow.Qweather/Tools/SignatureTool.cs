@@ -19,7 +19,12 @@ namespace Sparrow.Qweather.Tools
         /// <param name="exp"></param>
         /// <returns></returns>
         /// <exception cref="FileNotFoundException"></exception>
-        public static string GenerateJwtToken(string kid, string sub, string certPath, long exp = 86400)
+        public static string GenerateJwtToken(
+            string kid,
+            string sub,
+            string certPath,
+            long exp = 86400
+        )
         {
             // 1. 构建私钥文件的绝对路径
             string privateKeyPath = Path.Combine(certPath);

@@ -1,6 +1,6 @@
 # Sparrow.Qweather .NET SDK
 
-[![GitHub stars](https://img.shields.io/github/stars/cnsmallant/sparrow.qweather?style=flat&logo=github)](https://github.com/cnsmallant/sparrow.qweather/stargazers)[![star](https://gitee.com/dikeko/sparrow.qweather/badge/star.svg?theme=dark)](https://gitee.com/dikeko/sparrow.qweather/stargazers)[![NuGet Version](https://img.shields.io/nuget/vpre/sparrow.qweather?style=flatt&logo=nuget)](https://www.nuget.org/packages/Sparrow.Qweather)![GitHub License](https://img.shields.io/github/license/cnsmallant/sparrow.qweather?logo=github)![NuGet Downloads](https://img.shields.io/nuget/dt/sparrow.qweather?logo=nuget)
+[![GitHub stars](https://img.shields.io/github/stars/cnsmallant/sparrow.qweather?style=flat&logo=github)](https://github.com/cnsmallant/sparrow.qweather/stargazers)  [![star](https://gitee.com/dikeko/sparrow.qweather/badge/star.svg?theme=gray)](https://gitee.com/dikeko/sparrow.qweather/stargazers)  [![NuGet Version](https://img.shields.io/nuget/vpre/sparrow.qweather?style=flatt&logo=nuget)](https://www.nuget.org/packages/Sparrow.Qweather)  ![GitHub License](https://img.shields.io/github/license/cnsmallant/sparrow.qweather?logo=github)  ![NuGet Downloads](https://img.shields.io/nuget/dt/sparrow.qweather?logo=nuget)
 
 
 ---
@@ -73,15 +73,39 @@ using Sparrow.Qweather.Client;
 using Sparrow.Qweather.Example;
 using Sparrow.Qweather.Tools;
 
-var request =
-    new Sparrow.Qweather.Models.Request.Weather.WeatherNowRequest
+#region 实时天气
+
+var weatherNowRequest = new Sparrow.Qweather.Models.Request.Weather.WeatherNowRequest
+{
+    Location = "101010100",
+}; //实时天气查询
+
+var weatherNowResponse = await WebApiClientSetting
+    .WebApiClient()
+    .WeatherNowAsync(weatherNowRequest);
+var weatherNowJson = JsonTool.SerializeWithNullFilter(weatherNowResponse);
+
+#endregion 实时天气
+
+#region 逐小时天气
+
+var weatherHoursRequest = new Sparrow.Qweather.Models.Request.Weather.WeatherHoursRequest
+{
+    Path = new Sparrow.Qweather.Models.Request.Weather.WeatherHoursPathParameters { Hours = "24h" },
+    Query = new Sparrow.Qweather.Models.Request.Weather.WeatherHoursQueryParameters
     {
         Location = "101010100",
-    }; // 实时天气查询
+    }
+};
+var weatherHoursResponse = await WebApiClientSetting
+    .WebApiClient()
+    .WeatherHoursAsync(weatherHoursRequest);
+var weatherHoursJson = JsonTool.SerializeWithNullFilter(weatherHoursResponse);
 
-var response = await WebApiClientSetting.WebApiClient().WeatherNowAsync(request);
-var json = JsonTool.SerializeWithNullFilter(response);
-Console.WriteLine(json);
+#endregion 逐小时天气
+
+Console.WriteLine($"实时天气返回数据：{weatherNowJson}\n逐小时天气返回数据：{weatherHoursJson}");
+
 ```
 
 ## SDK 方法与和风天气 API 对应列表

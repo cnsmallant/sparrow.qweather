@@ -360,5 +360,5 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
-/Sparrow.Qweather.Example/cert/ed25519-private.pem
-/Sparrow.Qweather.Example/cert/ed25519-public.pem
+#忽略证书
+*.pem

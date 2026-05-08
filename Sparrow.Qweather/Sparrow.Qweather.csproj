@@ -2,11 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>2026.04.29.02</Version>
+    <Version>2026.05.08</Version>
     <Authors>Tiiko</Authors>
     <Description>Sparrow.Qweather 是基于和风天气开放平台官方 API 封装的 .NET SDK，提供简洁、类型安全的异步调用接口，让开发者无需关心 JWT 签名与 HTTP 细节，即可在 .NET 项目中快速接入全球气象数据服务。</Description>
     <Copyright>©迪易科®</Copyright>
-    <PackageProjectUrl>https://github.com/cnsmallant/sparrow.qweather</PackageProjectUrl>
+    <PackageProjectUrl>https://gitee.com/dikeko/sparrow.qweather</PackageProjectUrl>
     <PackageIcon>Icon.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://gitee.com/dikeko/sparrow.qweather</RepositoryUrl>
@@ -16,10 +16,14 @@
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <Title>$(AssemblyName)</Title>
     <RepositoryType>git</RepositoryType>
+    <PackageReleaseNotes>增加token存储缓存</PackageReleaseNotes>
+    <IncludeSymbols>False</IncludeSymbols>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Flurl.Http" Version="4.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Abstractions" Version="10.0.7" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="10.0.7" />
     <PackageReference Include="NSec.Cryptography" Version="20.2.0" />
   </ItemGroup>
 
