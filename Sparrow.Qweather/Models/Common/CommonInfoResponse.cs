@@ -64,4 +64,25 @@ namespace Sparrow.Qweather.Models.Common
         [JsonPropertyName("license")]
         public List<string> License { get; set; }
     }
+
+    public class CommonMetaDataResponse
+    {
+        /// <summary>
+        /// 数据唯一标识
+        /// </summary>
+        [JsonPropertyName("tag")]
+        public string Tag { get; set; }
+
+        /// <summary>
+        /// 数据归因信息或声明，必须与当前数据共同显示
+        /// </summary>
+        [JsonPropertyName("attributions")]
+        public List<string> Attributions { get; set; }
+
+        /// <summary>
+        /// 当前是否有返回的数据。当 "zeroResult": true 时，表示请求是成功的，但没有任何需要返回的数据。例如查询一个坐标的天气预警信息，此时该地点没有任何预警信息。
+        /// </summary>
+        [JsonPropertyName("zeroResult")]
+        public bool ZeroResult { get; set; }
+    }
 }

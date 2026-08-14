@@ -25,6 +25,22 @@
         /// </summary>
         public const string GeoPoiRangePath = "/geo/v2/poi/range";
 
+        #region 天气预报
+
+        /// <summary>
+        /// 实时天气
+        /// </summary>
+        public const string WeatherCurrentPath = "/weather/v1/current/{0}/{1}";
+
+        /// <summary>
+        /// 每日天气预报
+        /// </summary>
+        public const string WeatherDailyPath = "/weather/v1/daily/{0}/{1}";
+
+        #endregion 天气预报
+
+        #region 旧版天气预报
+
         /// <summary>
         /// 实时天气
         /// </summary>
@@ -54,6 +70,8 @@
         /// 格点逐小时天气预报
         /// </summary>
         public const string GridWeatherHoursPath = "/v7/grid-weather/{0}";
+
+        #endregion 旧版天气预报
 
         /// <summary>
         /// 分钟级降水

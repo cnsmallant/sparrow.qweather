@@ -1,4 +1,5 @@
-﻿using Sparrow.Qweather.Interface.Service;
+﻿using System.Threading.Tasks;
+using Sparrow.Qweather.Interface.Service;
 using Sparrow.Qweather.Models.Request.AirQuality;
 using Sparrow.Qweather.Models.Request.Astronomy;
 using Sparrow.Qweather.Models.Request.Console;
@@ -24,7 +25,6 @@ using Sparrow.Qweather.Models.Response.TropicalCyclone;
 using Sparrow.Qweather.Models.Response.Weather;
 using Sparrow.Qweather.Models.Response.Weatheralert;
 using Sparrow.Qweather.Tools;
-using System.Threading.Tasks;
 
 namespace Sparrow.Qweather.Client
 {
@@ -103,6 +103,43 @@ namespace Sparrow.Qweather.Client
         #endregion GeoApi
 
         #region 天气预报
+
+        /// <summary>
+        /// 实时天气 https://dev.qweather.com/docs/api/weather/weather-current/
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="args"></param>
+        /// <returns></returns>
+        public static async Task<WeatherCurrentResponse> WeatherCurrentAsync(
+            this WebApiClient client,
+            WeatherCurrentRequest args
+        )
+        {
+            return await ServiceFactoryTool
+                .GetService<IWeatherService>()
+                .WeatherCurrentAsync(client.Options, args);
+        }
+
+        /// <summary>
+        /// 每日天气预报 https://dev.qweather.com/docs/api/weather/weather-daily-forecast/
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="args"></param>
+        /// <returns></returns>
+
+        public static async Task<WeatherDailyResponse> WeatherDailyAsync(
+            this WebApiClient client,
+            WeatherDailyRequest args
+        )
+        {
+            return await ServiceFactoryTool
+                .GetService<IWeatherService>()
+                .WeatherDailyAsync(client.Options, args);
+        }
+
+        #endregion 天气预报
+
+        #region 旧版天气预报
 
         /// <summary>
         /// 实时天气 https://dev.qweather.com/docs/api/weather/weather-now/
@@ -207,7 +244,7 @@ namespace Sparrow.Qweather.Client
                 .GridWeatherHoursAsync(client.Options, args);
         }
 
-        #endregion 天气预报
+        #endregion 旧版天气预报
 
         #region 分钟级预报
 

@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
+using Microsoft.Extensions.Options;
 using Sparrow.Qweather.Const;
 using Sparrow.Qweather.Interface.Service;
 using Sparrow.Qweather.Models.Options;
@@ -13,6 +15,50 @@ namespace Sparrow.Qweather.Service
     /// </summary>
     public class WeatherService : IWeatherService
     {
+        #region 天气预报
+
+        /// <summary>
+        /// 实时天气 https://dev.qweather.com/docs/api/weather/weather-current/
+        /// </summary>
+        /// <param name="options"></param>
+        /// <param name="args"></param>
+        /// <returns></returns>
+        public Task<WeatherCurrentResponse> WeatherCurrentAsync(
+            WebApiOptions options,
+            WeatherCurrentRequest args
+        )
+        {
+            string path = string.Format(
+                WebApiConst.WeatherCurrentPath,
+                args.Path.Latitude,
+                args.Path.Longitude
+            );
+            return args.Query.GetApiResponseAsync<WeatherCurrentResponse>(options, path);
+        }
+
+        /// <summary>
+        /// 每日天气预报 https://dev.qweather.com/docs/api/weather/weather-daily-forecast/
+        /// </summary>
+        /// <param name="options"></param>
+        /// <param name="args"></param>
+        /// <returns></returns>
+        public Task<WeatherDailyResponse> WeatherDailyAsync(
+            WebApiOptions options,
+            WeatherDailyRequest args
+        )
+        {
+            string path = string.Format(
+                WebApiConst.WeatherDailyPath,
+                args.Path.Latitude,
+                args.Path.Longitude
+            );
+            return args.Query.GetApiResponseAsync<WeatherDailyResponse>(options, path);
+        }
+
+        #endregion 天气预报
+
+        #region 旧版天气
+
         /// <summary>
         /// 实时天气 https://dev.qweather.com/docs/api/weather/weather-now/
         /// </summary>
@@ -106,5 +152,7 @@ namespace Sparrow.Qweather.Service
             string path = string.Format(WebApiConst.GridWeatherHoursPath, args.Path.Hours);
             return args.Query.GetApiResponseAsync<GridWeatherHoursResponse>(options, path);
         }
+
+        #endregion 旧版天气
     }
 }
