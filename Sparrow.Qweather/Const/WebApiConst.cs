@@ -37,6 +37,11 @@
         /// </summary>
         public const string WeatherDailyPath = "/weather/v1/daily/{0}/{1}";
 
+        /// <summary>
+        /// 小时天气预报
+        /// </summary>
+        public const string WeatherHourlyPath = "/weather/v1/hourly/{0}/{1}";
+
         #endregion 天气预报
 
         #region 旧版天气预报

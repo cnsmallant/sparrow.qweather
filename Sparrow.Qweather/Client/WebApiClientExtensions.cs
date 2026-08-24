@@ -137,6 +137,22 @@ namespace Sparrow.Qweather.Client
                 .WeatherDailyAsync(client.Options, args);
         }
 
+        /// <summary>
+        /// 小时天气预报 https://dev.qweather.com/docs/api/weather/weather-hourly-forecast/
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="args"></param>
+        /// <returns></returns>
+        public static async Task<WeatherHourlyResponse> WeatherHourlyAsync(
+            this WebApiClient client,
+            WeatherHourlyRequest args
+        )
+        {
+            return await ServiceFactoryTool
+                .GetService<IWeatherService>()
+                .WeatherHourlyAsync(client.Options, args);
+        }
+
         #endregion 天气预报
 
         #region 旧版天气预报

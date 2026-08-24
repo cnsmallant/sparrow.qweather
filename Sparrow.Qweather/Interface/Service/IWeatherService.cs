@@ -28,6 +28,14 @@ namespace Sparrow.Qweather.Interface.Service
         /// <returns></returns>
         Task<WeatherDailyResponse> WeatherDailyAsync(WebApiOptions options, WeatherDailyRequest args);
 
+        /// <summary>
+        /// 小时天气预报
+        /// </summary>
+        /// <param name="options"></param>
+        /// <param name="args"></param>
+        /// <returns></returns>
+        Task<WeatherHourlyResponse> WeatherHourlyAsync(WebApiOptions options, WeatherHourlyRequest args);
+
         #endregion 天气预报
 
         #region 旧版天气预报 2026年8月14日14:59:41

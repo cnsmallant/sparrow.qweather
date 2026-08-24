@@ -55,6 +55,25 @@ namespace Sparrow.Qweather.Service
             return args.Query.GetApiResponseAsync<WeatherDailyResponse>(options, path);
         }
 
+        /// <summary>
+        /// 小时天气预报 https://dev.qweather.com/docs/api/weather/weather-hourly-forecast/
+        /// </summary>
+        /// <param name="options"></param>
+        /// <param name="args"></param>
+        /// <returns></returns>
+        public Task<WeatherHourlyResponse> WeatherHourlyAsync(
+            WebApiOptions options,
+            WeatherHourlyRequest args
+        )
+        {
+            string path = string.Format(
+                WebApiConst.WeatherHourlyPath,
+                args.Path.Latitude,
+                args.Path.Longitude
+            );
+            return args.Query.GetApiResponseAsync<WeatherHourlyResponse>(options, path);
+        }
+
         #endregion 天气预报
 
         #region 旧版天气
