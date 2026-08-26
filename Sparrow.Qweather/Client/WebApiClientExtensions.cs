@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using Sparrow.Qweather.Interface.Service;
 using Sparrow.Qweather.Models.Request.AirQuality;
 using Sparrow.Qweather.Models.Request.Astronomy;
@@ -163,6 +164,7 @@ namespace Sparrow.Qweather.Client
         /// <param name="client"></param>
         /// <param name="args"></param>
         /// <returns></returns>
+        [Obsolete]
         public static async Task<WeatherNowResponse> WeatherNowAsync(
             this WebApiClient client,
             WeatherNowRequest args
@@ -181,6 +183,7 @@ namespace Sparrow.Qweather.Client
         /// days(必选)预报天数，支持最多30天预报，可选值：3d 3天预报。7d 7天预报。10d 10天预报。15d 15天预报。30d 30天预报。
         /// </param>
         /// <returns></returns>
+        [Obsolete]
         public static async Task<WeatherDaysResponse> WeatherDaysAsync(
             this WebApiClient client,
             WeatherDaysRequest args
@@ -199,6 +202,7 @@ namespace Sparrow.Qweather.Client
         /// hours(必选)预报小时数，支持最多72小时预报，可选值：3h 3小时预报。6h 6小时预报。12h 12小时预报。24h 24小时预报。
         /// </param>
         /// <returns></returns>
+        [Obsolete]
         public static async Task<WeatherHoursResponse> WeatherHoursAsync(
             this WebApiClient client,
             WeatherHoursRequest args
@@ -215,6 +219,7 @@ namespace Sparrow.Qweather.Client
         /// <param name="client"></param>
         /// <param name="args"></param>
         /// <returns></returns>
+        [Obsolete]
         public static async Task<GridWeatherNowResponse> GridWeatherNowAsync(
             this WebApiClient client,
             GridWeatherNowRequest args
@@ -232,6 +237,7 @@ namespace Sparrow.Qweather.Client
         /// <param name="args"></param>
         /// <param name="days">days(必选)预报天数，支持最多7天预报，可选值：3d 3天预报。7d 7天预报。</param>
         /// <returns></returns>
+        [Obsolete]
         public static async Task<GridWeatherDaysResponse> GridWeatherDaysAsync(
             this WebApiClient client,
             GridWeatherDaysRequest args
@@ -249,7 +255,7 @@ namespace Sparrow.Qweather.Client
         /// <param name="args"></param>
         /// <param name="hours">hours(必选)预报小时数，支持最多72小时预报，可选值：24h 24小时预报。72h 72小时预报。</param>
         /// <returns></returns>
-
+        [Obsolete]
         public static async Task<GridWeatherHoursResponse> GridWeatherHoursAsync(
             this WebApiClient client,
             GridWeatherHoursRequest args
