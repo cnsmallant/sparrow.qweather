@@ -45,6 +45,6 @@ namespace Sparrow.Qweather.Models.Request.Weather
         /// <summary>
         /// 是否返回查询地点的本地时间 可选值： false UTC时间（默认），true 本地时间
         /// </summary>
-        public string LocalTime { get; set; }
+        public string LocalTime { get; set; } = "true";
     }
 }

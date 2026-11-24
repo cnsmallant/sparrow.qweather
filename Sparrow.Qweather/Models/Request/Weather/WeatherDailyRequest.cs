@@ -47,6 +47,6 @@ namespace Sparrow.Qweather.Models.Request.Weather
         /// <summary>
         /// 本地时间，格式为：2020-05-05T09:00:00
         /// </summary>
-        public string LocalTime { get; set; }
+        public string LocalTime { get; set; } = "true";
     }
 }

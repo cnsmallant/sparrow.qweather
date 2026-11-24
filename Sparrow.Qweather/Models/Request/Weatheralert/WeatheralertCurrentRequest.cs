@@ -37,7 +37,7 @@ namespace Sparrow.Qweather.Models.Request.Weatheralert
         /// </summary>
         /// <example>true</example>
         /// <remarks>此参数为可选参数，默认值为 false。</remarks>
-        public bool LocalTime { get; set; } = false;
+        public bool LocalTime { get; set; } = true;
     }
 
     /// <summary>

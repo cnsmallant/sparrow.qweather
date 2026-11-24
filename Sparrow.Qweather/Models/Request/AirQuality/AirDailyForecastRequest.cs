@@ -29,7 +29,7 @@ namespace Sparrow.Qweather.Models.Request.AirQuality
         /// <summary>
         /// 是否返回查询地点的本地时间。true 返回本地时间，false 返回UTC时间（默认）。
         /// </summary>
-        public bool LocalTime { get; set; } = false;
+        public bool LocalTime { get; set; } = true;
     }
 
     /// <summary>
