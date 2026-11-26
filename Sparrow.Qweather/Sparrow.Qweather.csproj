@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>2026.11.24</Version>
+    <Version>2026.11.26</Version>
     <Authors>Tiiko</Authors>
     <Description>Sparrow.Qweather 是基于和风天气开放平台官方 API 封装的 .NET SDK，提供简洁、类型安全的异步调用接口，让开发者无需关心 JWT 签名与 HTTP 细节，即可在 .NET 项目中快速接入全球气象数据服务。</Description>
     <Copyright>©迪易科®</Copyright>
@@ -16,10 +16,10 @@
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <Title>$(AssemblyName)</Title>
     <RepositoryType>git</RepositoryType>
-    <PackageReleaseNotes>LocalTime 更改默认为 true 2026年11月24日08:39:30</PackageReleaseNotes>
+    <PackageReleaseNotes>优化参数拼接 2026年11月26日08:58:06</PackageReleaseNotes>
     <IncludeSymbols>False</IncludeSymbols>
-    <AssemblyVersion>2026.11.24</AssemblyVersion>
-    <FileVersion>2026.11.24</FileVersion>
+    <AssemblyVersion>2026.11.26</AssemblyVersion>
+    <FileVersion>2026.11.26</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>

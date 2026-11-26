@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
+using System.Text;
 
 namespace Sparrow.Qweather.Tools
 {
@@ -12,7 +13,6 @@ namespace Sparrow.Qweather.Tools
     /// </summary>
     public static class QueryStringTool
     {
-
         /// <summary>
         /// 将实体对象转换为GET请求查询字符串
         /// </summary>
@@ -42,7 +42,6 @@ namespace Sparrow.Qweather.Tools
 
             foreach (var property in properties)
             {
-
                 var value = property.GetValue(t, null);
 
                 // 如果值为null且设置为忽略null值，则跳过
@@ -54,13 +53,14 @@ namespace Sparrow.Qweather.Tools
                 string key;
                 if (string.IsNullOrEmpty(prefix))
                 {
-                    key = property.GetDescription().ToLower();
+                    key = property.GetDescription();
                 }
                 else
                 {
-                    key = $"{prefix}.{property.GetDescription().ToLower()}";
+                    key = $"{prefix}.{property.GetDescription()}";
                 }
 
+                key = key.ToCamelCase();
                 // 处理简单类型
                 if (IsSimpleType(property.PropertyType))
                 {
@@ -103,6 +103,55 @@ namespace Sparrow.Qweather.Tools
         }
 
         /// <summary>
+        /// 将属性名转换为小驼峰式命名
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        private static string ToCamelCase(this string name)
+        {
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                return name;
+            }
+
+            var parts = name.Split(
+                new[] { '_', '-', ' ' },
+                StringSplitOptions.RemoveEmptyEntries
+            );
+
+            if (parts.Length == 0)
+            {
+                return name;
+            }
+
+            var sb = new StringBuilder();
+
+            for (int i = 0; i < parts.Length; i++)
+            {
+                var part = parts[i];
+
+                if (i == 0)
+                {
+                    sb.Append(char.ToLowerInvariant(part[0]));
+                    if (part.Length > 1)
+                    {
+                        sb.Append(part.Substring(1));
+                    }
+                }
+                else
+                {
+                    sb.Append(char.ToUpperInvariant(part[0]));
+                    if (part.Length > 1)
+                    {
+                        sb.Append(part.Substring(1));
+                    }
+                }
+            }
+
+            return sb.ToString();
+        }
+
+        /// <summary>
         /// 判断类型是否为简单类型（值类型、字符串、日期等）
         /// </summary>
         /// <param name="type">要检查的类型</param>
@@ -124,8 +173,9 @@ namespace Sparrow.Qweather.Tools
                 || type == typeof(TimeSpan)
                 || type == typeof(Guid);
         }
+
         /// <summary>
-        ///  根据类型和属性名获取 [Description] 特性值
+        /// 根据类型和属性名获取 [Description] 特性值
         /// </summary>
         /// <param name="property"></param>
         /// <returns></returns>
